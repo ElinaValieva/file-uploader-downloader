@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body class="bg-light">
+
+<h1 class="text-center text-danger font-weight-bold">FILE MANAGER</h1>
+<div class="row">
+    <div class="col">
+        <form method="post" enctype="multipart/form-data" id="fileUploadForm" class="form">
+            <label class="text-dark font-weight-bold">FILE NAME: </label>
+            <input type="text" name="fileName"/>
+            <label class="text-dark font-weight-bold">DURATION DATE:</label>
+            <input type="date" name="dateDurationDescription"/>
+            <label class="text-dark font-weight-bold">FILE: </label>
+            <input type="file" name="multipartFile"/>
+            <br/>
+            <button id="btnSubmit" class="btn btn-dark">UPLOAD</button>
+        </form>
+    </div>
+    <div class="col">
+        <form method="get" class="form">
+            <label class="text-danger font-weight-bold">KEY:</label>
+            <input type="text" placeholder="TOKEN" id="tokenKey"/>
+            <br/>
+            <button id="downloadBtn" class="btn btn-dark">DOWNLOAD</button>
+        </form>
+    </div>
+</div>
+
+
+<h1 class="text-danger font-weight-bold text-center">KEY FOR DOWNLOADING</h1>
+<pre>
+    <span id="result"></span>
+</pre>
+
+
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
