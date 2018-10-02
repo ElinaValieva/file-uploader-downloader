@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/SpringBootWebApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/config/StorageConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/config/URLs.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/config/Utils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/controller/IndexController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/controller/RestController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/controller/RestFileServiceController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/controller/RestUploadController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/controller/ViewController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/exception/BusinessLogicException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/exception/ErrorCode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/exception/FileServiceExceptionHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/exception/RestGlobalExceptionHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/model/FileModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/model/FileModelDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/model/UploadModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/repository/FileRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/FileCollector.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/FileManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/FileService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/FileServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/FileStorager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/FileSystemManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/FileSystemService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/api/FileManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/api/FileService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/api/FileSystemManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/api/FileSystemService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/implementation/FileSystemManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/service/implementation/FileSystemService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/mkyong/controller/RestUploadController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/resources/static/css/styles.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/resources/static/js/main.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/resources/templates/upload.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Dropbox/fileService/fileService/src/main/java/com/elina/fileService/service/impl/FileStorageService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
