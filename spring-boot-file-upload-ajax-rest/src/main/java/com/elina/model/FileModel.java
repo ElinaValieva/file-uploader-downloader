@@ -4,13 +4,14 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "file")
+@Table(name = "file_model_table")
 public class FileModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "seq-gen", sequenceName = "MY_SEQ_GEN")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "seq-gen")
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     @Column(name = "name")
     private String name;
@@ -21,11 +22,11 @@ public class FileModel {
     @Column(name = "token")
     private String token;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
