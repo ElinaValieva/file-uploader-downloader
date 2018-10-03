@@ -16,3 +16,10 @@
 * delete all files DELETE `http://localhost:8083/api/delete/all`
 
 > You can use Postman for testing or working with service by using API
+
+### SOME MAGIC PROPERTY FOR DATABASE INITIALIZATION
+1. How to skip SQL errors (for example if user or for command "insert values" value already exists)
+`spring.datasource.continue-on-error=true`
+2. How to initialize our database on startup
+`spring.datasource.initialization-mode = always`
+
