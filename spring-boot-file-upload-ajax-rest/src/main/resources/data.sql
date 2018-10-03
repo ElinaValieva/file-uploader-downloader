@@ -1,0 +1,1 @@
+INSERT INTO postgres.file_model_table (name, date_duration, token, 1) VALUES ('TEST.sql', '2018-10-03 19:30:00.000000', 'VEVTVC5zcWw=', 1);
