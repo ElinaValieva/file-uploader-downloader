@@ -13,4 +13,5 @@ public interface FileRepository extends CrudRepository<FileModel, Long> {
     FileModel findByToken(String token);
 
     List<FileModel> findByDateDurationBefore(Date date);
+
 }
