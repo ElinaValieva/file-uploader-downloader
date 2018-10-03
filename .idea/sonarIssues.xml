@@ -13,12 +13,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$USER_HOME$/Dropbox/fileService/fileService/src/main/java/com/elina/fileService/service/impl/FileStorageService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/pom.xml">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/SpringBootWebApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/java/com/elina/config/StaticResourceConfiguration.java">
           <value>
             <set />
           </value>
@@ -189,11 +199,6 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/spring-boot-file-upload-ajax-rest/src/main/resources/templates/upload.html">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Dropbox/fileService/fileService/src/main/java/com/elina/fileService/service/impl/FileStorageService.java">
           <value>
             <set />
           </value>
