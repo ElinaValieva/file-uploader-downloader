@@ -2,7 +2,7 @@ package com.elina.exception;
 
 public class BusinessLogicException extends Exception {
 
-    private String error;
+    private final String error;
 
     public String getError() {
         return error;
