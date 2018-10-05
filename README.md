@@ -24,5 +24,5 @@
 `spring.datasource.initialization-mode = always`
 
 ### DOCKER    
-`docker build -f Dockerfile -t spring-boot-with-docker .`
+`docker build -f Dockerfile -t spring-boot-with-docker .`<br/>
 `docker run -p 8088:8088 spring-boot-with-docker`
