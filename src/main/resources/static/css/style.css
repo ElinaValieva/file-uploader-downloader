@@ -1,0 +1,72 @@
+.formFile {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: white;
+    width: 60%;
+    border: 0;
+    margin: 20% 20%;
+    padding: 10%;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.formFile input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #6E717C;
+}
+
+.formFile button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FF338D;
+    margin-left: 25%;
+    width: 50%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    /*-webkit-transition: all 0.3 ease;*/
+    /*transition: all 0.3 ease;*/
+    cursor: pointer;
+}
+
+.formFile button:hover, .form button:active, .form button:focus {
+    background: #6E717C;
+}
+
+.formFile label {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FF338D;
+}
+
+.formFile .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.formFile .message a {
+    color: #FF338D;
+    text-decoration: none;
+}
+
+h6 {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FF338D;
+}
