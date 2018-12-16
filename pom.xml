@@ -20,7 +20,8 @@
         <webdrivermanager.version>2.2.4</webdrivermanager.version>
         <selenium.version>3.4.0</selenium.version>
         <selenium.driver.version>2.53.1</selenium.driver.version>
-        <jquery.version>2.2.4</jquery.version>
+        <jquery.version>3.3.1</jquery.version>
+        <bootstrap.version>4.1.3</bootstrap.version>
         <javax.version>2.2</javax.version>
         <postgres.version>42.2.2</postgres.version>
         <joda.time.version>2.9.9</joda.time.version>
@@ -48,12 +49,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>jquery</artifactId>
-            <version>${jquery.version}</version>
         </dependency>
 
         <dependency>
@@ -143,6 +138,18 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
             <version>${selenium.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${jquery.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${bootstrap.version}</version>
         </dependency>
     </dependencies>
     <build>
