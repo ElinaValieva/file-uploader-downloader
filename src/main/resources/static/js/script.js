@@ -1,126 +1,42 @@
 $(function () {
-    var droppedFiles = false;
-    var fileName = '';
-    var $dropzone = $('.dropzone');
-    var uploading = false;
-    var $syncing = $('.syncing');
-    var $done = $('.done');
-    var $bar = $('.bar');
 
-    $dropzone.on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-    })
-        .on('dragover dragenter', function () {
-            $dropzone.addClass('is-dragover');
-        })
-        .on('dragleave dragend drop', function () {
-            $dropzone.removeClass('is-dragover');
-        })
-        .on('drop', function (e) {
-            droppedFiles = e.originalEvent.dataTransfer.files;
-            fileName = droppedFiles[0]['name'];
-            $('.filename').html(fileName);
-            $('.dropzone .upload').hide();
-        });
+    $("#token").prop("disabled", true);
+    $("#token").prop("hidden", true);
 
-    $("#uploadFile").bind('click', function () {
-        startUpload();
-    });
-
-    $("input:file").change(function () {
-        fileName = $(this)[0].files[0].name;
-        $('.filename').html(fileName);
-        $('.dropzone .upload').hide();
-    });
-
-    $("#downLoadFile").bind('click', function () {
-        Swal({
-            title: 'Set key for downloading',
-            input: 'text',
-            inputAttributes: {
-                autocapitalize: 'off'
-            },
-            showCancelButton: true,
-            confirmButtonText: 'Download',
-            showLoaderOnConfirm: true,
-        }).then((result) => {
-            if (result.value) {
-                download(result.value);
-            }
-        })
-    });
-
-    $("#sendFile").bind('click', function () {
-        sendInstructions();
-    });
-
-    function startUpload() {
-        if (!uploading && fileName != '') {
-            uploading = true;
-            $("#uploadFile").html('Uploading...');
-            $dropzone.fadeOut();
-            $syncing.addClass('active');
-            $done.addClass('active');
-            $bar.addClass('active');
-            upload();
-        }
-    }
-
-    function upload() {
+    $("#btnSubmit").click(function (event) {
         event.preventDefault();
-        var form = $('#fileUploadForm')[0];
-        var data = new FormData(form);
+        let form = $('#fileUploadForm')[0];
+        let data = new FormData(form);
         data.append("CustomField", "This is some extra data, testing");
-        $("#uploadFile").prop("disabled", true);
+        $("#btnSubmit").prop("disabled", true);
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url: "/transform",
+            url: "/upload",
             data: data,
             processData: false, //prevent jQuery from automatically transforming the data into a query string
             contentType: false,
             cache: false,
             timeout: 600000
         }).done(function (data) {
+            let temp = data;
+            $("#result").html(JSON.stringify(data));
             console.log("SUCCESS : ", data);
-            $("#uploadFile").prop("disabled", false);
-            showDone();
+            $("#btnSubmit").prop("disabled", false);
+            let copyText = temp.token;
+            // alert("You key saved in buffer: " + copyText);
+            copyText.select();
+            document.execCommand("copy");
         }).fail(function (e) {
+            $("#result").html(e.responseText);
             console.log("ERROR : ", e);
-            $("#uploadFile").prop("disabled", false);
-            swal("Oops..", e.responseText, "error");
+            $("#btnSubmit").prop("disabled", false);
         });
-    }
+    });
 
-    function showDone() {
-        $("#uploadFile").html('Done');
-        $("#sendFile").prop("disabled", false);
-        $("#downLoadFile").prop("disabled", false);
-    }
-
-    function download(key) {
-        window.location.replace("http://localhost:8090/download/" + key);
-    }
-
-    function sendInstructions() {
+    $('#downloadBtn').click(function (event) {
+        let tokenKey = $('#tokenKey').val();
         event.preventDefault();
-        var form = $('#fileUploadForm')[0];
-        var data = new FormData(form);
-        data.append("CustomField", "This is some extra data, testing");
-        $("#sendFile").prop("disabled", true);
-        $.ajax({
-            type: "GET",
-            url: "/send",
-            timeout: 600000
-        }).done(function (data) {
-            console.log("SUCCESS : ", data);
-            $("#sendFile").prop("disabled", false);
-            showDone();
-        }).fail(function (e) {
-            console.log("ERROR : ", e);
-            $("#sendFile").prop("disabled", false);
-            swal("Oops..", e.responseText, "error");
-        });
-    }
-})
+        window.location.replace(window.location.origin + "/download/" + tokenKey);
+    });
+});

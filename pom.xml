@@ -30,6 +30,7 @@
         <junit.version>4.12</junit.version>
         <starter.test.version>1.5.3.RELEASE</starter.test.version>
         <lombok.version>1.18.2</lombok.version>
+        <h2.version>1.4.197</h2.version>
     </properties>
 
     <dependencies>
@@ -58,9 +59,14 @@
         </dependency>
 
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>${postgres.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
         </dependency>
 
         <dependency>
