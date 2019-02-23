@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <script src="webjars/jquery/3.3.1/jquery.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body class="bg-light">
+<div class="header-panel shadow-lg p-3 mb-5 bg-white rounded" style="background: white">
+    <img src="img/information.svg"/>
+    <label>File service</label>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="post" enctype="multipart/form-data" id="fileUploadForm"
+                  class="formFile shadow-lg p-3 mb-5 bg-white rounded align-items-center">
+                <label>FILE NAME</label>
+                <input type="text" name="fileName" placeholder="file name"/><br/>
+                <label>DURATION DATE</label>
+                <input type="datetime-local" value="2018-09-24T19:30:00" step="1" name="dateDurationDescription"/><br/>
+                <label>FILE</label>
+                <input type="file" name="multipartFile"/><br/>
+                <button id="btnSubmit" class="btn">UPLOAD</button>
+            </form>
+        </div>
+        <div class="col">
+            <form method="get" class="formFile shadow-lg p-3 mb-5 bg-white rounded">
+                <label>KEY</label>
+                <input type="text" placeholder="key for downloading ..." id="tokenKey"/><br/>
+                <button id="downloadBtn" class="btn">DOWNLOAD</button>
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="shadow-lg p-3 mb-1 bg-white rounded fixed-bottom">
+    <h6 id="result"></h6>
+</footer>
+</body>
+</html>
