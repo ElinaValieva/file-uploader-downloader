@@ -1,9 +1,9 @@
-package com.file.manager.service;
+package com.file.manager.service.fileController;
 
 
 import com.file.manager.exception.BusinessLogicException;
-import com.file.manager.model.FileModel;
-import com.file.manager.model.FileModelDTO;
+import com.file.manager.dto.FileInfo;
+import com.file.manager.dto.FileModel;
 import org.springframework.core.io.Resource;
 
 import java.io.IOException;
@@ -12,11 +12,11 @@ import java.text.ParseException;
 
 /**
  * Main service to upload/download files
- * use FileManager to works with files
+ * use FileManagerService to works with files
  */
-public interface FileService {
+public interface FileControllerService {
 
-    FileModel uploadFile(FileModelDTO fileModelDTO) throws IOException, BusinessLogicException, ParseException;
+    FileInfo uploadFile(FileModel fileModel) throws IOException, BusinessLogicException, ParseException;
 
     Resource downloadFile(String token) throws BusinessLogicException, IOException;
 

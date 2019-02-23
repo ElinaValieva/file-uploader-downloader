@@ -1,4 +1,4 @@
-package com.file.manager.model;
+package com.file.manager.dto;
 
 import lombok.Data;
 
@@ -6,13 +6,12 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "file_model_table")
+@Table(name = "file_model_table", schema = "file_manager")
 @Data
-public class FileModel {
+public class FileInfo {
 
     @Id
-    @SequenceGenerator(name = "seq-gen", sequenceName = "MY_SEQ_GEN")
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "seq-gen")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 

@@ -1,9 +1,9 @@
-package com.file.manager.service;
+package com.file.manager.service.fileManager;
 
 
 import com.file.manager.exception.BusinessLogicException;
-import com.file.manager.model.FileModel;
-import com.file.manager.model.FileModelDTO;
+import com.file.manager.dto.FileInfo;
+import com.file.manager.dto.FileModel;
 import org.springframework.core.io.Resource;
 
 import java.io.IOException;
@@ -17,19 +17,19 @@ import java.nio.file.Path;
  * - delete file
  * - delete all files
  */
-public interface FileManager {
+public interface FileManagerService {
 
-    void saveFile(FileModelDTO fileModelDTO) throws IOException, BusinessLogicException;
+    void saveFile(FileModel fileModel) throws IOException, BusinessLogicException;
 
-    String generateToken(FileModelDTO fileModelDTO) throws UnsupportedEncodingException;
+    String generateToken(FileModel fileModel) throws UnsupportedEncodingException;
 
     void deleteAll() throws IOException;
 
     void deleteFile(String fileName) throws IOException;
 
-    void deleteFile(FileModel fileModel) throws IOException;
+    void deleteFile(FileInfo fileInfo) throws IOException;
 
-    Resource loadFile(FileModel fileModel) throws IOException, BusinessLogicException;
+    Resource loadFile(FileInfo fileInfo) throws IOException, BusinessLogicException;
 
     Path getFileDirectory(String fileName) throws IOException;
 }

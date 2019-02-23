@@ -1,8 +1,9 @@
 package com.file.manager.service;
 
-import com.file.manager.config.Utils;
-import com.file.manager.model.FileModel;
+import com.file.manager.common.DateUtils;
+import com.file.manager.dto.FileInfo;
 import com.file.manager.repository.FileRepository;
+import com.file.manager.service.fileManager.FileManagerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,21 +25,25 @@ public class FileCollector {
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
     private static final int TIME = 60000;
 
-    @Autowired
-    private FileRepository fileRepository;
+    private final FileRepository fileRepository;
+
+    private final FileManagerService fileManagerService;
 
     @Autowired
-    private FileManager fileManager;
+    public FileCollector(FileRepository fileRepository, FileManagerService fileManagerService) {
+        this.fileRepository = fileRepository;
+        this.fileManagerService = fileManagerService;
+    }
 
     @Scheduled(fixedRate = TIME)
     public void clearOldFiles() throws ParseException {
         logger.debug("FILE COLLECTOR START DELETING ...");
-        List<FileModel> fileModels = fileRepository.findByDateDurationBefore(Utils.getTodayDateTime());
-        fileModels.forEach(fileModel -> {
+        List<FileInfo> fileInfos = fileRepository.findByDateDurationBefore(DateUtils.getTodayDateTime());
+        fileInfos.forEach(fileModel -> {
             try {
                 logger.debug("FILE COLLECTOR try to delete " + fileModel.getName()
                         + " with date duration " + fileModel.getDateDuration());
-                fileManager.deleteFile(fileModel);
+                fileManagerService.deleteFile(fileModel);
                 fileRepository.delete(fileModel);
                 logger.debug("FILE COLLECTOR delete {}", fileModel.getName());
             } catch (IOException e) {

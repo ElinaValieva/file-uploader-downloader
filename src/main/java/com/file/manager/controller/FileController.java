@@ -1,11 +1,11 @@
 package com.file.manager.controller;
 
 
-import com.file.manager.config.URLs;
+import com.file.manager.common.URLs;
 import com.file.manager.exception.BusinessLogicException;
-import com.file.manager.model.FileModel;
-import com.file.manager.model.FileModelDTO;
-import com.file.manager.service.FileService;
+import com.file.manager.dto.FileInfo;
+import com.file.manager.dto.FileModel;
+import com.file.manager.service.fileController.FileControllerService;
 import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,41 +21,29 @@ import java.io.IOException;
 import java.text.ParseException;
 
 @RestController
-public class RestFileServiceController {
+public class FileController {
 
-    private final Logger logger = LoggerFactory.getLogger(RestFileServiceController.class);
+    private final Logger logger = LoggerFactory.getLogger(FileController.class);
     private static final Gson gson = new Gson();
 
-    @Autowired
-    private FileService fileService;
+    private final FileControllerService fileControllerService;
 
-    /**
-     * API for uploading file
-     * @param fileModelDTO
-     * @return JSON with fileName, dateDuration, token
-     * @throws IOException
-     * @throws BusinessLogicException
-     * @throws ParseException
-     */
-    @PostMapping(value = URLs.UPLOAD, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> uploadFileMulti(FileModelDTO fileModelDTO) throws IOException, BusinessLogicException, ParseException {
-        logger.debug("Multiple file {} start for uploading...", fileModelDTO.getFileName());
-        FileModel fileModel = fileService.uploadFile(fileModelDTO);
-        return ResponseEntity.ok(gson.toJson(fileModel));
+    @Autowired
+    public FileController(FileControllerService fileControllerService) {
+        this.fileControllerService = fileControllerService;
     }
 
-    /**
-     * API for downloading file
-     * @param token - key for downloading files like identification number
-     * @param httpServletRequest
-     * @return resource for downloading
-     * @throws IOException
-     * @throws BusinessLogicException
-     */
+    @PostMapping(value = URLs.UPLOAD, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> uploadFileMulti(FileModel fileModel) throws IOException, BusinessLogicException, ParseException {
+        logger.debug("Multiple file {} start for uploading...", fileModel.getFileName());
+        FileInfo fileInfo = fileControllerService.uploadFile(fileModel);
+        return ResponseEntity.ok(gson.toJson(fileInfo));
+    }
+
     @GetMapping(URLs.DOWNLOAD)
     public ResponseEntity<Resource> downloadFileMulti(@PathVariable String token, HttpServletRequest httpServletRequest) throws IOException, BusinessLogicException {
         logger.debug("Multiple file start to downloading ...");
-        Resource resource = fileService.downloadFile(token);
+        Resource resource = fileControllerService.downloadFile(token);
         String contentType = httpServletRequest.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
         if (contentType == null) {
             contentType = "application/octet-stream";
@@ -67,30 +55,17 @@ public class RestFileServiceController {
                 .body(resource);
     }
 
-    /**
-     * API for delete file
-     * @param token
-     * @return message
-     * @throws IOException
-     * @throws BusinessLogicException
-     */
     @DeleteMapping(URLs.DELETE)
     public ResponseEntity<String> deleteFile(@PathVariable String token) throws IOException, BusinessLogicException {
         logger.debug("Multiple file {} start to delete ...", token);
-        fileService.deleteFile(token);
+        fileControllerService.deleteFile(token);
         return ResponseEntity.ok("Successfully delete ");
     }
 
-    /**
-     * APi for deleting files
-     * @return message
-     * @throws BusinessLogicException
-     * @throws IOException
-     */
     @DeleteMapping(URLs.DELETE_ALL)
     public ResponseEntity<String> deleteFiles() throws BusinessLogicException, IOException {
         logger.debug("Multiple file start to delete ...");
-        fileService.deleteFiles();
+        fileControllerService.deleteFiles();
         return ResponseEntity.ok("Successfully delete all files");
     }
 }

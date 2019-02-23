@@ -1,10 +1,10 @@
-package com.file.manager.model;
+package com.file.manager.dto;
 
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 @Data
-public class FileModelDTO {
+public class FileModel {
 
     private String fileName;
 
