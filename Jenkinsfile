@@ -1,14 +1,18 @@
-pipeline {
-    agent none
-    stages {
-        stage('build') {
-            agent {
-                docker {
-                    image 'maven: 3.5.0'
+pipeline{
+    agent any
+    stages{
+        stage('Build app') {
+            steps {
+                withMaven (maven: 'MAVEN', jdk: 'JDK1.8.0') {
+                    sh 'mvn install -DskipTests=true' 
                 }
             }
+        }
+        stage('Unit tests'){
             steps {
-                sh 'mvn clean install'
+                withMaven (maven: 'MAVEN', jdk: 'JDK1.8.0') {
+                    sh 'mvn test' 
+                }
             }
         }
     }
